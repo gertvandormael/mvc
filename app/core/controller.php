@@ -7,17 +7,15 @@ class Controller
     public $model = null;
 
     // Opens the db connection and loads the model
-    function __construct() {
+    public function __construct() {
         $this->openConnection();
         $this->model();
     }
 
     private function openConnection() {
-        $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
-        
-        $this->db = new PDO("mysql:host=127.0.0.1;dbname=mvc", "gert", "becode", $options);
+        // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
+        $this->db = new PDO("mysql:host=127.0.0.1;dbname=mvc", "gert", "becode");
     }
-
 
     // creates a new model and passes the db connection to it
     public function model() {

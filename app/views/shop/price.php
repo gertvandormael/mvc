@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,17 @@
     <link rel="stylesheet" href="http://mvc.local/public/css/main.css">
     <script src="https://kit.fontawesome.com/24d7844539.js" crossorigin="anonymous"></script>
     <script src="http://mvc.local/public/js/shoppingcart.js" defer></script>
+    <style>
+    </style>
 </head>
+
 <body>
     <?php include ($_SERVER["DOCUMENT_ROOT"]."/app/views/templates/header.php") ?>
     <div class="main-container">
         <?php include 'sidebar.php'?>
         <div class="shop-container">
-            <?php $allProducts = $data["allProducts"];
-        // Start of foreach loop
-        foreach ($allProducts as $row) { ?>
+        <?php $price = $data["price"];
+        foreach ($price as $row) { // start of foreach loop ?>
             <div class="article">
                 <div class="product">
                     <div class="info">
@@ -37,14 +40,14 @@
                     <a href="<?php echo "article/".$row["id"] ?>"><img src="<?php echo $row["img_store"] ?>" alt=""></a>
                 </div>
                 <div class="add-cart">
-                    <form action="addCart/<?php echo $row["article"]?>" method="post">
-                        <input type="submit" name="addCart" value="Add to cart">
-                    </form>
+                    <button href="test">Add to cart</button>
                 </div>
             </div>
             <?php 
-        } // End of foreach loop
+        } // end of foreach loop
         ?>
         </div>
     </div>
 </body>
+
+</html>
